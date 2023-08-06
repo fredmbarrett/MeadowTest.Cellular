@@ -17,7 +17,6 @@ namespace MeadowTest.Cellular
         const string TEST_URL = "https://postman-echo.com/get?foo1=bar1&foo2=bar2";
 
         TestAppSettings _appSettings;
-        RgbPwmLed onboardLed;
 
         public override async Task Initialize()
         {
@@ -78,25 +77,15 @@ namespace MeadowTest.Cellular
             {
                 await NetworkController.Instance.GetWebPageViaHttpClient(TEST_URL);
 
-                await ShowColorPulse(Color.Blue, duration);
-                await ShowColorPulse(Color.Cyan, duration);
-                await ShowColorPulse(Color.Green, duration);
-                await ShowColorPulse(Color.GreenYellow, duration);
-                await ShowColorPulse(Color.Yellow, duration);
-                await ShowColorPulse(Color.Orange, duration);
-                await ShowColorPulse(Color.OrangeRed, duration);
-                await ShowColorPulse(Color.Red, duration);
-                await ShowColorPulse(Color.MediumVioletRed, duration);
-                await ShowColorPulse(Color.Purple, duration);
-                await ShowColorPulse(Color.Magenta, duration);
-                await ShowColorPulse(Color.Pink, duration);
+                await LedController.Instance.ShowColorPulse(Color.Blue, duration);
+                await LedController.Instance.ShowColorPulse(Color.Cyan, duration);
+                await LedController.Instance.ShowColorPulse(Color.Green, duration);
+                await LedController.Instance.ShowColorPulse(Color.GreenYellow, duration);
+                await LedController.Instance.ShowColorPulse(Color.Yellow, duration);
+                await LedController.Instance.ShowColorPulse(Color.Orange, duration);
+                await LedController.Instance.ShowColorPulse(Color.OrangeRed, duration);
+                await LedController.Instance.ShowColorPulse(Color.Red, duration);
             }
-        }
-
-        async Task ShowColorPulse(Color color, TimeSpan duration)
-        {
-            await onboardLed.StartPulse(color, duration / 2);
-            await Task.Delay(duration);
         }
     }
 }

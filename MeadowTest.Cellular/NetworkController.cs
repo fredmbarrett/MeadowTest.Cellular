@@ -148,14 +148,14 @@ namespace MeadowTest.Cellular
         public async Task WaitForNtpTimeUpdate()
         {
             Log.Info($"Waiting for Network Time event...");
-            if (IsTimeSet == false)
+            if (Instance.IsTimeSet == false)
             {
                 do
                 {
                     await Task.Delay(1000);
-                } while (!NetworkController.Instance.IsTimeSet);
+                } while (!Instance.IsTimeSet);
 
-                if (IsTimeSet == false)
+                if (Instance.IsTimeSet == false)
                     throw new Exception("NTP time update failed");
             }
         }

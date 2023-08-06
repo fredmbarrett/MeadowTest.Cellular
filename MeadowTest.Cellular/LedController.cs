@@ -3,6 +3,7 @@ using Meadow.Foundation;
 using Meadow.Foundation.Leds;
 using Meadow.Peripherals.Leds;
 using System;
+using System.Threading.Tasks;
 
 namespace MeadowTest.Cellular
 {
@@ -69,6 +70,12 @@ namespace MeadowTest.Cellular
                     SetColor(Color.White);
                     break;
             }
+        }
+
+        public async Task ShowColorPulse(Color color, TimeSpan duration)
+        {
+            await _led.StartPulse(color, duration / 2);
+            await Task.Delay(duration);
         }
 
         private void SetColor(Color color)
