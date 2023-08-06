@@ -1,0 +1,9 @@
+Settings:
+    APN: {APN_NAME} # Access Point Name
+    Module: BG95M3 # Module model (BG770A, BG95M3 or M95)
+#    User: virtu # APN user (optional)
+#    Password: virtu # APN password (optional)
+#    Operator: 311480 # Carrier numeric operator code (optional)
+    Mode: CATM1 # Network mode (CATM1, NBIOT or GSM) (optional)
+    Interface: /dev/ttyS0 # COM4
+    TurnOnPin: D10 # Configurable EN pin for cell module

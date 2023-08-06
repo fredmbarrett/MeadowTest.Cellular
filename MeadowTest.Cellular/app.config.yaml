@@ -1,0 +1,45 @@
+Lifecycle:
+    RestartOnAppFailure: false
+    AppFailureRestartDelaySeconds: 15
+
+Logging:
+  LogLevel:
+    Default: Trace
+
+Update:
+    Enabled: false
+
+TestApp:
+    # === Envizor Device Settings
+    # Device name
+    DeviceName: MeadowTest
+
+    # === Envizor Wifi Settings
+    # SSID Name and password
+    WifiSsid: {SSID}
+    WifiPassword: {PASSWD}
+
+    # Number of seconds to wait for wifi to wake up
+    WifiWakeUpDelaySeconds: 15
+
+    # Number of seconds to wait before restarting wifi communications
+    WifiTimeoutSeconds: 60
+
+    # Number of times to retry wifi initialization before failing
+    WifiMaxRetryCount: 3
+
+    # === Envizor Cell Settings
+    # APN Name for the cellular network
+    CellApnName: {APN_NAME}
+
+    # Number of seconds to wait for cell to wake up
+    CellWakeUpDelaySeconds: 15
+
+    # Number of seconds to wait before restarting cell communications
+    CellTimeoutSeconds: 60
+
+    # Amount of time to wait between failed communication sets
+    CellRetryDelaySeconds: 900
+
+    # Number of times to retry cell communication before failing
+    CellMaxRetryCount: 3

@@ -1,0 +1,34 @@
+﻿Device:
+#     # Name of the device on the network.
+  Name: MeadowTest
+  ReservedPins: I9;H13;C7
+#
+#     # Uncomment if SD card hardware present on this hardware (e.g., Core-Compute module with SD add-on)? Optional; default value is `false`.
+#     SdStorageSupported: true
+# # Control how the ESP coprocessor will start and operate.
+
+Coprocessor:
+#     # Should the ESP32 automatically attempt to connect to an access point at startup?
+#     # If set to true, wifi.config.yaml credentials must be stored in the device.
+  AutomaticallyStartNetwork: false
+#
+#     # Should the ESP32 automatically reconnect to the configured access point?
+  AutomaticallyReconnect: true
+#
+#     # Maximum number of retry attempts for connections etc. before an error code is returned.
+#  MaximumRetryCount: 7
+# # Network configuration.
+Network:
+# Which interface should be used?
+  DefaultInterface: Cell
+  GetNetworkTimeAtStartup: true
+
+# Time synchronization period in seconds.
+  NtpRefreshPeriodSeconds: 3600
+
+# Name of the NTP servers.
+  NtpServers:
+    - 0.pool.ntp.org
+    - 1.pool.ntp.org
+    - 2.pool.ntp.org
+    - 3.pool.ntp.org
