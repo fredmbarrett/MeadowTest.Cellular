@@ -10,6 +10,9 @@
     <PackageReference Include="Meadow.Foundation" Version="*" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="cell.config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="meadow.config.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
